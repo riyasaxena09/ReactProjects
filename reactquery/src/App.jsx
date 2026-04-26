@@ -1,12 +1,10 @@
 
 import './App.css'
+import Card from './Card'
 
 function App() {
   return (
-   <div>
-    Riya Saxena
-    hello erveruone jkffn kjfdsfdskj kdfndskjfdskfsf dskjfdsjfdsfsd 
-   </div>
+   <Card></Card>
   )
 }
 
