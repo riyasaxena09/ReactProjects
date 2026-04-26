@@ -1,10 +1,14 @@
 import { useContext, useEffect } from "react";
 import { Context } from "./ContextProvier/createContext";
-
+import { useDispatch, useSelector } from "react-redux";
+import { increment } from "./store/counterSlice";
 const Card=()=>{
 
     const { apiData, setApiData }=useContext(Context);
-
+    const count = useSelector((state) => state.counter.value);
+    console.log(count, 'count')
+    const dispatch=useDispatch()
+      
     useEffect(()=>{
 
       const fetchdata=async()=>{
@@ -23,7 +27,8 @@ const Card=()=>{
 
     return(
         <>
-        <h1>This is data</h1>
+        <h1>This is data {count}</h1>
+        <button onClick={()=>dispatch(increment())}>Increment</button>
         {apiData?.products?.splice(0,5)?.map((item)=>{
             return(
                 <div>
