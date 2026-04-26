@@ -1,6 +1,9 @@
 import { useMutation } from "@tanstack/react-query";
+import { useContext } from "react";
+import { Context } from "./ContextProvier/createContext";
 
 const Button=()=>{
+    const { apiData }=useContext(Context);
     
      const fetchdata=async()=>{
         try{
@@ -29,6 +32,7 @@ const Button=()=>{
 
         <h1>{buttonData?.products?.[0]?.title}
         </h1>
+        <h2>{apiData?.products?.[1]?.title}</h2>
         </>
     )
 }

@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
+import { Context } from "./ContextProvier/createContext";
 
 const Card=()=>{
-     
-    const [data, setData]=useState();
+
+    const { apiData, setApiData }=useContext(Context);
+
     useEffect(()=>{
 
       const fetchdata=async()=>{
         try{
         const res=await fetch('https://dummyjson.com/products');
         const resJson=await res.json();
-        setData(resJson)
+        setApiData(resJson)
         }
         catch(err){
             console.log(err)
@@ -22,7 +24,7 @@ const Card=()=>{
     return(
         <>
         <h1>This is data</h1>
-        {data?.products?.splice(0,5)?.map((item)=>{
+        {apiData?.products?.splice(0,5)?.map((item)=>{
             return(
                 <div>
                     <span>{item.brand}</span>
