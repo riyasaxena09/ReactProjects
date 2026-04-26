@@ -6,7 +6,6 @@ const Table=()=>{
         try{
         const res=await fetch('https://dummyjson.com/products');
         const resJson=await res.json();
-                console.log(resJson)
 
         return resJson;
         }
@@ -20,7 +19,6 @@ const Table=()=>{
         queryFn:fetchdata
     })
 
-    console.log(data)
     return(
         <div>
       <table>
