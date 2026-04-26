@@ -7,6 +7,7 @@ import Button from './button';
 import CreateContext from './ContextProvier/context';
 import { store } from './store/store';
 import { Provider } from "react-redux";
+import Products from './Products';
 const queryClient = new QueryClient();
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Card/>
       <Table/>
       <Button/>
+      <Products/>
    </QueryClientProvider>
   </CreateContext>
   </Provider>
