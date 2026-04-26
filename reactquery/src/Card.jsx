@@ -10,7 +10,6 @@ const Card=()=>{
         const res=await fetch('https://dummyjson.com/products');
         const resJson=await res.json();
         setData(resJson)
-        console.log(resJson)
         }
         catch(err){
             console.log(err)
@@ -23,7 +22,7 @@ const Card=()=>{
     return(
         <>
         <h1>This is data</h1>
-        {data?.products?.map((item)=>{
+        {data?.products?.splice(0,5)?.map((item)=>{
             return(
                 <div>
                     <span>{item.brand}</span>
