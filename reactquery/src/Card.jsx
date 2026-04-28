@@ -6,7 +6,7 @@ const Card=()=>{
 
     const { apiData, setApiData }=useContext(Context);
     const count = useSelector((state) => state.counter.value);
-    console.log(count, 'count')
+
     const dispatch=useDispatch()
       
     useEffect(()=>{

@@ -8,6 +8,8 @@ import CreateContext from './ContextProvier/context';
 import { store } from './store/store';
 import { Provider } from "react-redux";
 import Products from './Products';
+import Enhanceduser from './higherOrderComponent/EnhancedUser';
+import Debounce from './debonce/debonce';
 const queryClient = new QueryClient();
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
   <Provider store={store}>
   <CreateContext>
     <QueryClientProvider client={queryClient}>
+      <Debounce/>
+      <Enhanceduser/>
       <Card/>
       <Table/>
       <Button/>
